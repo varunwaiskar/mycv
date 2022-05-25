@@ -9,11 +9,13 @@ public class UpdateUserReferralRequest {
     private Long id;
     private String referralLink;
     private String referralDetails;
+    private ReferralType referralType;
     private String referralTargetEmail;
     private String referralTargetSubject;
     private String jobLocation;
     private String jobType;
     private String jobCompany;
+    private ReferralPreviewType previewType;
     private String previewLink;
     private MultipartFile previewFile;
     private boolean refPublic;
@@ -44,6 +46,14 @@ public class UpdateUserReferralRequest {
 
     public void setReferralDetails(String referralDetails) {
         this.referralDetails = referralDetails;
+    }
+
+    public ReferralType getReferralType() {
+        return referralType;
+    }
+
+    public void setReferralType(ReferralType referralType) {
+        this.referralType = referralType;
     }
 
     public String getReferralTargetEmail() {
@@ -86,6 +96,13 @@ public class UpdateUserReferralRequest {
         this.jobCompany = jobCompany;
     }
 
+    public ReferralPreviewType getPreviewType() {
+        return previewType;
+    }
+
+    public void setPreviewType(ReferralPreviewType previewType) {
+        this.previewType = previewType;
+    }
 
     public String getPreviewLink() {
         return previewLink;
@@ -118,4 +135,16 @@ public class UpdateUserReferralRequest {
     public void setBountyEnable(boolean bountyEnable) {
         this.bountyEnable = bountyEnable;
     }
+
+	@Override
+	public String toString() {
+		return "UpdateUserReferralRequest [id=" + id + ", referralLink=" + referralLink + ", referralDetails="
+				+ referralDetails + ", referralType=" + referralType + ", referralTargetEmail=" + referralTargetEmail
+				+ ", referralTargetSubject=" + referralTargetSubject + ", jobLocation=" + jobLocation + ", jobType="
+				+ jobType + ", jobCompany=" + jobCompany + ", previewType=" + previewType + ", previewLink="
+				+ previewLink + ", previewFile=" + previewFile + ", refPublic=" + refPublic + ", bountyEnable="
+				+ bountyEnable + "]";
+	}
+    
+    
 }

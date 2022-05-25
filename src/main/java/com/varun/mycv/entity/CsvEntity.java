@@ -2,40 +2,57 @@ package com.varun.mycv.entity;
 
 public class CsvEntity {
 
-	private String referralType = "Job";
+   // private Long id = (long)1893;
 
-	// title
-	private String jobTitle;
 	
-	// unknown?
-	private String referralTargetEmail = "varun@gmail.com";
+	// description
+    private String referralDetails;
+	
+	private ReferralType referralType = ReferralType.JOB_SPEC;
+
+	//title
+    private String referralTargetSubject;
+
+	//email
+	private String referralTargetEmail = "randeep@mycvtracker.com";
 
 	private String jobType;
 
 	private String jobLocation;
 
-	// description i.e. salary
-	private String referralDetails;
+    private ReferralPreviewType previewType = ReferralPreviewType.NONE;
 
+    private boolean refPublic = false;
+    
+    private boolean bountyEnable = false;
+	
 	private String jobCompany;
+	
+	
+	//Getters & Setters
 
-	// apply link
-	private String previewLink;
+	public String getReferralDetails() {
+		return referralDetails;
+	}
 
-	public String getReferralType() {
+	public void setReferralDetails(String referralDetails) {
+		this.referralDetails = referralDetails;
+	}
+
+	public ReferralType getReferralType() {
 		return referralType;
 	}
 
-	public void setReferralType(String referralType) {
+	public void setReferralType(ReferralType referralType) {
 		this.referralType = referralType;
 	}
 
-	public String getJobTitle() {
-		return jobTitle;
+	public String getReferralTargetSubject() {
+		return referralTargetSubject;
 	}
 
-	public void setJobTitle(String jobTitle) {
-		this.jobTitle = jobTitle;
+	public void setReferralTargetSubject(String referralTargetSubject) {
+		this.referralTargetSubject = referralTargetSubject;
 	}
 
 	public String getReferralTargetEmail() {
@@ -62,12 +79,28 @@ public class CsvEntity {
 		this.jobLocation = jobLocation;
 	}
 
-	public String getReferralDetails() {
-		return referralDetails;
+	public ReferralPreviewType getPreviewType() {
+		return previewType;
 	}
 
-	public void setReferralDetails(String referralDetails) {
-		this.referralDetails = referralDetails;
+	public void setPreviewType(ReferralPreviewType previewType) {
+		this.previewType = previewType;
+	}
+
+	public boolean isRefPublic() {
+		return refPublic;
+	}
+
+	public void setRefPublic(boolean refPublic) {
+		this.refPublic = refPublic;
+	}
+
+	public boolean isBountyEnable() {
+		return bountyEnable;
+	}
+
+	public void setBountyEnable(boolean bountyEnable) {
+		this.bountyEnable = bountyEnable;
 	}
 
 	public String getJobCompany() {
@@ -78,21 +111,15 @@ public class CsvEntity {
 		this.jobCompany = jobCompany;
 	}
 
-	public String getPreviewLink() {
-		return previewLink;
-	}
-
-	public void setPreviewLink(String previewLink) {
-		this.previewLink = previewLink;
-	}
-
 	@Override
 	public String toString() {
-		return "CsvEntity [referralType=" + referralType + ", jobTitle=" + jobTitle + ", referralTargetEmail="
-				+ referralTargetEmail + ", jobType=" + jobType + ", jobLocation=" + jobLocation + ", referralDetails="
-				+ referralDetails + ", jobCompany=" + jobCompany + ", previewLink=" + previewLink + "]";
+		return "CsvEntity [referralDetails=" + referralDetails + ", referralType=" + referralType
+				+ ", referralTargetSubject=" + referralTargetSubject + ", referralTargetEmail=" + referralTargetEmail
+				+ ", jobType=" + jobType + ", jobLocation=" + jobLocation + ", previewType=" + previewType
+				+ ", refPublic=" + refPublic + ", bountyEnable=" + bountyEnable + ", jobCompany=" + jobCompany + "]";
 	}
+
 	
-	
+
 
 }
